@@ -1,0 +1,267 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "BACKEND-BASE-APP-V-2",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/admin/auth/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Sign in",
+                "description": "Login by email, password",
+                "operationId": "authLogin",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Correo electronico",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "root@skoy.pe"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Contraseña",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "root"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Credenciales correctas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Usuario logeado correctamente!"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "11|hIeKkm3J4CIZ4ir7PZ8vGHCAOTGZPyawT19gT4ZW"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "420": {
+                        "description": "Credenciales incorrectas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "fail": {
+                                            "type": "boolean",
+                                            "example": false
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/admin/auth/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Sign in",
+                "description": "Login by email, password",
+                "operationId": "Register",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Nombre",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "kevyn"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Correo electronico",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "root@skoy.pe"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Contraseña",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "root"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Credenciales correctas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Usuario logeado correctamente!"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "11|hIeKkm3J4CIZ4ir7PZ8vGHCAOTGZPyawT19gT4ZW"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/admin/auth/profile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Profile",
+                "operationId": "Profile",
+                "responses": {
+                    "200": {
+                        "description": "Credenciales correctas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/auth/logout": {
+            "get": {
+                "tags": [
+                    "Logout"
+                ],
+                "summary": "Logout",
+                "operationId": "Logout",
+                "responses": {
+                    "200": {
+                        "description": "Credenciales correctas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/verify": {
+            "post": {
+                "tags": [
+                    "Verify"
+                ],
+                "summary": "verify",
+                "operationId": "Verify",
+                "responses": {
+                    "200": {
+                        "description": "Credenciales correctas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Usuario logeado correctamente!"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "11|hIeKkm3J4CIZ4ir7PZ8vGHCAOTGZPyawT19gT4ZW"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token based Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

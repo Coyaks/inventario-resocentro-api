@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: laravel-base-app
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "4005:80"
+        command: >
+            sh -c "cd /var/www/html/ && composer install && composer dump-autoload --optimize && apache2-foreground"

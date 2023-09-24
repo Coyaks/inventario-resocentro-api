@@ -1,0 +1,163 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class ModulesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run() : void
+    {
+
+        DB::table('modules')->insert([
+            [
+                'id_parent'    => 0,
+                'id_type_user' => 1,
+                'sort'         => 1,
+                'name'         => 'Dashboard',
+                'url'          => 'dashboard',
+                'icon'         => 'pie_chart',
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 0,
+                'id_type_user' => 1,
+                'sort'         => 2,
+                'name'         => 'Actividad',
+                'url'          => 'logs',
+                'icon'         => 'visibility',
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 0,
+                'id_type_user' => 1,
+                'sort'         => 3,
+                'name'         => 'Administración de usuarios',
+                'url'          => null,
+                'icon'         => 'lock',
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 3,
+                'id_type_user' => 1,
+                'sort'         => 4,
+                'name'         => 'Usuarios del sistema',
+                'url'          => 'users',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 3,
+                'id_type_user' => 1,
+                'sort'         => 5,
+                'name'         => 'Perfiles',
+                'url'          => 'roles',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 3,
+                'id_type_user' => 1,
+                'sort'         => 6,
+                'name'         => 'Sesiones',
+                'url'          => 'sessions',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 0,
+                'id_type_user' => 1,
+                'sort'         => 7,
+                'name'         => 'Configuraciones',
+                'url'          => null,
+                'icon'         => 'settings',
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 7,
+                'id_type_user' => 1,
+                'sort'         => 8,
+                'name'         => 'Sistema',
+                'url'          => null,
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 8,
+                'id_type_user' => 1,
+                'sort'         => 9,
+                'name'         => 'Ajustes',
+                'url'          => 'settings',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 8,
+                'id_type_user' => 1,
+                'sort'         => 10,
+                'name'         => 'Módulos',
+                'url'          => 'modules',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+            [
+                'id_parent'    => 7,
+                'id_type_user' => 1,
+                'sort'         => 11,
+                'name'         => 'Términos y condiciones',
+                'url'          => 'legal',
+                'icon'         => null,
+                'root'         => 1,
+                'section'      => 0,
+                'level'        => 0,
+                'badge'        => null,
+                'state'        => 1,
+            ],
+        ]);
+    }
+}
