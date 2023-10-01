@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             ModulesSeeder::class,
             PermsSeeder::class,
-            TypePersonsSeeder::class
+            TypePersonsSeeder::class,
+            MaintenancesSeeder::class,
         ]);
     }
 }

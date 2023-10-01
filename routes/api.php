@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\MaintenancesController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\VerifyController;
 use App\Http\Controllers\DeviceController;
@@ -25,6 +26,9 @@ Route::prefix('test')->group(function () {
 
 Route::resource('/persons', PersonsController::class)->only('index', 'store', 'update', 'destroy');
 Route::resource('/devices', DeviceController::class)->only('index', 'store', 'update', 'destroy');
+
+
+Route::resource('/maintenances', MaintenancesController::class)->only('index', 'store', 'update', 'destroy');
 Route::middleware(['auth:sanctum'])->group(function(){
 
     //Route::resource('/persons', PersonsController::class)->only('index', 'store', 'update', 'destroy');
@@ -34,12 +38,11 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/users', [UsersController::class, 'index']);
         Route::post('/users', [UsersController::class, 'create']);
         Route::get('/users/{id}', [UsersController::class, 'show']);
-
-        Route::get('/products', [\App\Http\Controllers\admin\ProductsController::class, 'index']);
-        Route::get('/products/{product}', '\App\Http\Controllers\ProductsController@show');
-
     });
 });
+
+
+
 
 
 

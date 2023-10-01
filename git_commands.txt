@@ -1,6 +1,6 @@
 git status
 git add .
-git commit -m "Models: Session, TypePerson, Module, Person, Role, Custom class Auth"
+git commit -m "Add module maintenances"
 git push
 git status
 

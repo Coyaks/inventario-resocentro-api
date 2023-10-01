@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
             $table->string('name', 80)->nullable();
+            $table->tinyInteger('state')->default(1);
             $table->timestamps();
         });
     }

@@ -1,4 +1,5 @@
 - composer i: instalar las dependencias de composer
+* MIGRACION = TABLA
 ** LARAVEL CLI ARTISAN
     - php artisan serve
 
